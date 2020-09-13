@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-r
 import logo from './logo.svg';
 import './App.css';
 import { Product } from './components/Product';
+import { Thanks } from './components/Thanks';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
@@ -14,7 +15,10 @@ function App() {
       <Header></Header>
       <div className="App">
         <Switch>
-          <Route path="/:id" component={Product} />
+          <Route path="/thanks" component={Thanks} />
+        </Switch>
+        <Switch>
+          <Route path="/product/:id" component={Product} />
         </Switch>
       </div>
       <Footer></Footer>
