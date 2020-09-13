@@ -1,7 +1,5 @@
-/* global Stripe */
 import React from 'react';
 import './Product.css';
-import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUB_KEY);
@@ -62,7 +60,7 @@ export class Product extends React.Component{
     render(){
         return(
             <div className="Product">
-                <img src={this.state.priceData.product ? this.state.priceData.product.images[0]:""}/>
+                <img alt={this.state.priceData.product ? this.state.priceData.product.name : ""} src={this.state.priceData.product ? this.state.priceData.product.images[0]:""}/>
                 <h1>{this.state.priceData.product ? this.state.priceData.product.name:""}</h1>
                 <p className="error">{this.state.errorMsg}</p>
                 <select name="size" id="size" value={this.state.size} onChange={
