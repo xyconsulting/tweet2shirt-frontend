@@ -27,7 +27,7 @@ export default function CheckoutForm(props) {
             state: document.getElementById("state").value,
             size: document.getElementById("size").value,
             zipcode:document.getElementById("zip").value,
-            image:props.product.images[0]
+            image:props.product.images[1]
         }
 
         const response = await fetch('http://localhost:4242/create-payment-intent',{
